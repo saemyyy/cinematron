@@ -46,3 +46,42 @@ function movie(genre) {
     .then((response) => console.log(response))
     .catch((err) => console.error(err));
 }
+
+function inputtest() {
+  let genresInput = prompt("Insert genres separated by commas");
+  if (genresInput) {
+    let genres = genresInput.split(",").map((genre) => genre.trim()); // Split and trim the input genres
+    let apiEndpoint = `https://api.themoviedb.org/3/genre/movie/list?api_key=68c7e70b372d783d6c8bc9fbc4426293&language=en-US`;
+
+    // Send the request to the API
+    fetch(apiEndpoint, {
+      method: "GET", // TMDb API expects a GET request for fetching genres
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json()) // Parse the JSON from the response
+      .then((data) => {
+        // Log the response data
+        console.log(data);
+
+        // Check each genre from the input against the list from the API
+        genres.forEach((genre) => {
+          let foundGenre = data.genres.find(
+            (g) => g.name.toLowerCase() === genre.toLowerCase()
+          );
+
+          if (foundGenre) {
+            console.log(`Genre found: It's ${foundGenre.name}.`);
+          } else {
+            console.log(`Genre "${genre}" does not exist in the database.`);
+          }
+        });
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  } else {
+    console.log("No genres provided.");
+  }
+}

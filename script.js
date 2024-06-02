@@ -88,5 +88,3 @@ function fetchMoviesByGenres(genreIds) {
       console.error("Error fetching movies:", error);
     });
 }
-
-alert("hi!");

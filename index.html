@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinematron</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!--Google Fonts Link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="img/favicon_io/favicon.ico" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+    <script src="https://frontend.bbz.cloud/scripts/v1/render.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="/documentation.html">Documentation</a>
+    </nav>
+    <h1>Cinematron</h1>
+    <section class="main">
+      <div class="search-section">
+        <h2>Find a movie to your favourite game</h2>
+        <input class="search" type="text" id="standort" />
+        <button onclick="run()">Suchen</button>
+      </div>
+      <!--In id="games" wird Content herein gerendert-->
+      <div id="games"></div>
+    </section>
+  </body>
+</html>

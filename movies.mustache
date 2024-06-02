@@ -1,6 +1,8 @@
-{{#results}}
-<div>
-  <h2>{{ <Title></Title> }}</h2>
-  <p>{{ Overview }}</p>
+<div id="movies">
+  {{#data}}
+  <div>
+    <h2>{{ title }}</h2>
+    <p>{{ overview }}</p>
+  </div>
+  {{/data}}
 </div>
-{{/results}}

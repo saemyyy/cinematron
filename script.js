@@ -40,20 +40,51 @@ function movie(genres) {
   fetch(apiEndpoint, options)
     .then((response) => response.json())
     .then((data) => {
+      const foundGenreIds = [];
       genres.forEach((genre) => {
         let foundGenre = data.genres.find(
           (g) => g.name.toLowerCase() === genre.toLowerCase()
         );
 
         if (foundGenre) {
-          console.log(`Genre found: It's ${foundGenre.name}.`);
+          console.log(
+            `Genre found: It's ${foundGenre.name} and the ID is ${foundGenre.id}.`
+          );
+          foundGenreIds.push(foundGenre.id);
         } else {
           console.log(`Genre "${genre}" does not exist in the database.`);
         }
       });
+
+      // Fetch movies based on found genre IDs
+      fetchMoviesByGenres(foundGenreIds);
     })
-    .then((response) => renderTo(response, "movies.mustache", "#movies"))
     .catch((error) => {
       console.error("Error:", error);
+    });
+}
+
+function fetchMoviesByGenres(genreIds) {
+  // Construct the API endpoint to fetch movies based on genre IDs
+  const apiEndpoint = `https://api.themoviedb.org/3/discover/movie?api_key=68c7e70b372d783d6c8bc9fbc4426293&with_genres=${genreIds.join(
+    ","
+  )}`;
+
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch(apiEndpoint, options)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Movies based on found genres:", data);
+      // Render the fetched movies
+      renderTo(data, "movies.mustache", "#movies");
+    })
+    .catch((error) => {
+      console.error("Error fetching movies:", error);
     });
 }

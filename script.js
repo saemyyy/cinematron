@@ -47,7 +47,7 @@ function movie(genre) {
     .catch((err) => console.error(err));
 }
 
-// Function that checkes if there is a genre, input made with prompt, will be changed to be automated
+// Function that checkes if there is a genre, input made with prompt, will be changed to be automated later
 function inputtest() {
   let genresInput = prompt("Insert genres separated by commas");
   if (genresInput) {

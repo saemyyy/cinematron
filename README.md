@@ -1,5 +1,5 @@
 # Cinematron
-Cinematron is an app designed for gaming and film enthusiasts. It allows you to discover and manage your favorite games and movies in one place.
+Cinematron is an app designed for gaming and film enthusiasts. It allows you to discover Movies that fit to the Genre of Games you enjoy playing
 
 ## Important Note
 Please be aware that Cinematron may not work in networks that block certain sites, such as Steam, Netflix, and rawg.io. If rawg.io is blocked, some features of the app may be limited.

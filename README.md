@@ -16,3 +16,4 @@ Please be aware that Cinematron may not work in networks that block certain site
    git clone https://github.com/yourusername/cinematron.git
 
 2. Open the index.html
+3. Search a Game and Enjoy the Movies that get shown!

@@ -79,10 +79,10 @@ function fetchMoviesByGenres(genreIds) {
 
   fetch(apiEndpoint, options)
     .then((response) => response.json())
-    .then((data) => {
-      console.log("Movies based on found genres:", data);
+    .then((response) => {
+      console.log("Movies based on found genres:", response);
       // Render the fetched movies
-      renderTo(data, "movies.mustache", "#movies");
+      renderTo(response, "movies.mustache", "#movies");
     })
     .catch((error) => {
       console.error("Error fetching movies:", error);

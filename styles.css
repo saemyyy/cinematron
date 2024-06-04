@@ -44,6 +44,12 @@ main {
 }
 
 .content {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.center-content {
   display: flex;
   flex-direction: column;
 }
@@ -143,4 +149,8 @@ html {
 
 .thumbnail {
   width: 40%;
+}
+
+.doc-container {
+  margin-bottom: 10%;
 }

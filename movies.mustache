@@ -1,14 +1,12 @@
+{{#results}}
 <div id="movies">
-  {{#results}}
-  <div>
-    <h2>{{ title }}</h2>
-    <p>{{ overview }}</p>
-    {{#poster_path}}
-    <img
-      class="thumbnail"
-      src="https://image.tmdb.org/t/p/original{{ poster_path }}"
-    />
-    {{/poster_path}}
-  </div>
-  {{/results}}
+  <h2>{{ title }}</h2>
+  <p>{{ overview }}</p>
+  {{#poster_path}}
+  <img
+    class="thumbnail"
+    src="https://image.tmdb.org/t/p/original{{ poster_path }}"
+  />
+  {{/poster_path}}
 </div>
+{{/results}}

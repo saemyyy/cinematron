@@ -45,6 +45,10 @@ main {
 
 .content {
   width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 img {
@@ -126,4 +130,13 @@ h1 {
 
 html {
   color: white;
+}
+#movies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.thumbnail {
+  width: 40%;
 }
